@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/**
+ Main app, like a "App/Scene Delegate"
+ @main attribute indentifies the app entry point
+ */
 @main
 struct LandmarksApp: App {
     var body: some Scene {

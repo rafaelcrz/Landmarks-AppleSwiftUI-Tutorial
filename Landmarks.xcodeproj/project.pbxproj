@@ -13,6 +13,8 @@
 		92FABE7626DEC91900571620 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92FABE7526DEC91900571620 /* Preview Assets.xcassets */; };
 		92FABE8126DEC91900571620 /* LandmarksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FABE8026DEC91900571620 /* LandmarksTests.swift */; };
 		92FABE8C26DEC91900571620 /* LandmarksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FABE8B26DEC91900571620 /* LandmarksUITests.swift */; };
+		92FABE9D26DECF4900571620 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FABE9C26DECF4900571620 /* CircleImageView.swift */; };
+		92FABEA226DED32100571620 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FABEA126DED32100571620 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		92FABE8726DEC91900571620 /* LandmarksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandmarksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FABE8B26DEC91900571620 /* LandmarksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksUITests.swift; sourceTree = "<group>"; };
 		92FABE8D26DEC91900571620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92FABE9C26DECF4900571620 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		92FABEA126DED32100571620 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,10 @@
 		92FABE6D26DEC91700571620 /* Landmarks */ = {
 			isa = PBXGroup;
 			children = (
+				92FABEA126DED32100571620 /* MapView.swift */,
 				92FABE6E26DEC91700571620 /* LandmarksApp.swift */,
 				92FABE7026DEC91700571620 /* ContentView.swift */,
+				92FABE9C26DECF4900571620 /* CircleImageView.swift */,
 				92FABE7226DEC91900571620 /* Assets.xcassets */,
 				92FABE7726DEC91900571620 /* Info.plist */,
 				92FABE7426DEC91900571620 /* Preview Content */,
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FABE7126DEC91700571620 /* ContentView.swift in Sources */,
+				92FABEA226DED32100571620 /* MapView.swift in Sources */,
+				92FABE9D26DECF4900571620 /* CircleImageView.swift in Sources */,
 				92FABE6F26DEC91700571620 /* LandmarksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
