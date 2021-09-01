@@ -84,12 +84,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		92AB34A126DF7CA10063A972 /* resources */ = {
+		92AB34A126DF7CA10063A972 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				92AB349C26DF7C9C0063A972 /* landmarkData.json */,
 			);
-			path = resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		92AB34C026DF85370063A972 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92AB34AB26DF7CD90063A972 /* Landmark.swift */,
+				92AB34B326DF807F0063A972 /* LandmarkViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92AB34C426DF854C0063A972 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92FABEA126DED32100571620 /* MapView.swift */,
+				92FABE7026DEC91700571620 /* ContentView.swift */,
+				92FABE9C26DECF4900571620 /* CircleImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		92AB34C826DF858E0063A972 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				92AB34B826DF80F00063A972 /* BundleHelper.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		92FABE6226DEC91700571620 = {
@@ -115,17 +142,14 @@
 		92FABE6D26DEC91700571620 /* Landmarks */ = {
 			isa = PBXGroup;
 			children = (
-				92AB34A126DF7CA10063A972 /* resources */,
-				92FABEA126DED32100571620 /* MapView.swift */,
+				92AB34A126DF7CA10063A972 /* Resources */,
+				92AB34C426DF854C0063A972 /* Views */,
 				92FABE6E26DEC91700571620 /* LandmarksApp.swift */,
-				92FABE7026DEC91700571620 /* ContentView.swift */,
-				92FABE9C26DECF4900571620 /* CircleImageView.swift */,
 				92FABE7226DEC91900571620 /* Assets.xcassets */,
 				92FABE7726DEC91900571620 /* Info.plist */,
 				92FABE7426DEC91900571620 /* Preview Content */,
-				92AB34AB26DF7CD90063A972 /* Landmark.swift */,
-				92AB34B326DF807F0063A972 /* LandmarkViewModel.swift */,
-				92AB34B826DF80F00063A972 /* BundleHelper.swift */,
+				92AB34C026DF85370063A972 /* Model */,
+				92AB34C826DF858E0063A972 /* Util */,
 			);
 			path = Landmarks;
 			sourceTree = "<group>";
