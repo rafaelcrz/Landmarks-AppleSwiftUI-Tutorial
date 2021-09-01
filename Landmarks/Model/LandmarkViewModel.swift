@@ -9,7 +9,7 @@ import Foundation
 
 struct LandmarkViewModel {
     var bundleHelper: BundleHelperProtocol
-    private let localFileName: String = "landmarkData.json"
+    private let localFileName: String = "landmarkData"
     
     func getLandmarks() -> [Landmark] {
         do {
