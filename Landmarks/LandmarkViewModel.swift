@@ -13,7 +13,7 @@ struct LandmarkViewModel {
     
     func getLandmarks() -> [Landmark] {
         do {
-            return try bundleHelper.load("localFileName", withExtension: "json")
+            return try bundleHelper.load(localFileName, withExtension: "json")
         } catch {
             return []
         }
