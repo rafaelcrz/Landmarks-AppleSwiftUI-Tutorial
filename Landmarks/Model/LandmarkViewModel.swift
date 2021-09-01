@@ -7,13 +7,21 @@
 
 import Foundation
 
-struct LandmarkViewModel {
+protocol LandmarkViewModelProtocol {
+    var bundleHelper: BundleHelperProtocol { get }
+    func getLandmarkRowDTO() -> [LandMarkRowDTO]
+}
+
+struct LandmarkViewModel: LandmarkViewModelProtocol {
     var bundleHelper: BundleHelperProtocol
     private let localFileName: String = "landmarkData"
     
-    func getLandmarks() -> [Landmark] {
+    func getLandmarkRowDTO() -> [LandMarkRowDTO] {
         do {
-            return try bundleHelper.load(localFileName, withExtension: "json")
+            let landMarks: [Landmark] = try bundleHelper.load(localFileName, withExtension: "json")
+            return landMarks.map {
+                LandMarkRowDTO(image: $0.image, title: $0.name)
+            }
         } catch {
             return []
         }

@@ -32,23 +32,19 @@ struct LandmarkRowView: View {
 }
 
 struct LandmarkRowView_Previews: PreviewProvider {
-    static var viewModel: LandmarkViewModel = .init(
-        bundleHelper: BundleHelper()
-    )
-    
-    static var landMarkRows: [LandMarkRowDTO] = viewModel.getLandmarks().map {
-        LandMarkRowDTO(image: $0.image, title: $0.name)
-    }
-    
     static var previews: some View {
         Group {
             LandmarkRowView(dto: .init(image: nil, title: "teste"))
                 .previewLayout(.fixed(width: 300, height: 70))
         }
         
-        List(landMarkRows) {
-            LandmarkRowView(dto: $0)
-                .previewLayout(.fixed(width: 300, height: 70))
+        List {
+            LandmarkRowView(dto: .init(image: .init("stmarylake"), title: "Stmarylake1"))
+            LandmarkRowView(dto: .init(image: .init("stmarylake"), title: "Stmarylake2"))
+            LandmarkRowView(dto: .init(image: .init("stmarylake"), title: "Stmarylake3"))
+            LandmarkRowView(dto: .init(image: .init("stmarylake"), title: "Stmarylake4"))
+            LandmarkRowView(dto: .init(image: .init("stmarylake"), title: "Stmarylake5"))
+            LandmarkRowView(dto: .init(image: .init("stmarylake"), title: "Stmarylake6"))
         }
     }
 }
