@@ -11,8 +11,13 @@ struct LandmarkListView: View {
     let viewModel: LandmarkViewModelProtocol
     
     var body: some View {
-        List(viewModel.getLandmarkRowDTO()) {
-            LandmarkRowView(dto: $0)
+        NavigationView {
+            List(viewModel.getLandmarkRowDTO()) { landmark in
+                NavigationLink(destination: LandmarksDetail()) {
+                    LandmarkRowView(dto: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
         }
     }
 }
