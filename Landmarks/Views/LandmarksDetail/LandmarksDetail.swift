@@ -12,37 +12,41 @@ struct LandmarksDetail: View {
     var dto: LandmarkDetailDTO
     
     var body: some View {
-        VStack {
-            MapView(settings: .init(latitude: dto.latitude, longiture: dto.longitude))
-                .ignoresSafeArea(edges: .top)
-                .frame(height: 300)
-            
-            CircleImageView(image: dto.image)
-                .offset(y: -130)
-                .padding(.bottom, -130)
-            
-            VStack(alignment: .leading) {
-                Text(dto.name)
-                    .font(.title)
+        ScrollView {
+            VStack {
+                MapView(settings: .init(latitude: dto.latitude, longiture: dto.longitude))
+                    .ignoresSafeArea(edges: .top)
+                    .frame(height: 300)
                 
-                HStack {
-                    Text(dto.park)
-                    Spacer()
-                    Text(dto.state)
-                }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
+                CircleImageView(image: dto.image)
+                    .offset(y: -130)
+                    .padding(.bottom, -130)
                 
-                Divider()
+                VStack(alignment: .leading) {
+                    Text(dto.name)
+                        .font(.title)
+                    
+                    HStack {
+                        Text(dto.park)
+                        Spacer()
+                        Text(dto.state)
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    
+                    Divider()
+                    
+                    Text(dto.name)
+                        .font(.title2)
+                    Text(dto.description)
+                    
+                }.padding()
                 
-                Text(dto.name)
-                    .font(.title2)
-                Text(dto.description)
-                
-            }.padding()
-            
-            Spacer()
+                Spacer()
+            }
         }
+        .navigationTitle(dto.name)
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
