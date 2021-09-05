@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct LandmarkListView: View {
-    let viewModel: LandmarkViewModelProtocol
+    let viewModel: LandmarkListViewModelProtocol
     
     var body: some View {
         NavigationView {
             List(viewModel.getLandmarkRowDTO()) { landmark in
-                NavigationLink(destination: LandmarksDetail()) {
-                    LandmarkRowView(dto: landmark)
+                NavigationLink(destination: LandmarksDetail(
+                    landMark: LandmarkDetailDTO()
+                )) {
+                    LandmarkRowView(image: landmark.image, title: landmark.title)
                 }
             }
             .navigationTitle("Landmarks")
@@ -24,6 +26,6 @@ struct LandmarkListView: View {
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkListView(viewModel: LandmarkViewModel(bundleHelper: BundleHelper()))
+        LandmarkListView(viewModel: LandmarkListViewModel(bundleHelper: BundleHelper()))
     }
 }

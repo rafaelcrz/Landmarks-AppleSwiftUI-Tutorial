@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let viewModel: LandmarkViewModelProtocol = LandmarkViewModel(
+    let viewModel: LandmarkListViewModelProtocol = LandmarkListViewModel(
         bundleHelper: BundleHelper()
     )
     

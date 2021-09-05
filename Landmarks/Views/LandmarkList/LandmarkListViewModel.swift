@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol LandmarkViewModelProtocol {
+protocol LandmarkListViewModelProtocol {
     var bundleHelper: BundleHelperProtocol { get }
     func getLandmarkRowDTO() -> [LandMarkDTO]
 }
 
-struct LandmarkListViewModel: LandmarkViewModelProtocol {
+struct LandmarkListViewModel: LandmarkListViewModelProtocol {
     var bundleHelper: BundleHelperProtocol
     private let localFileName: String = "landmarkData"
     

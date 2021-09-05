@@ -6,20 +6,23 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LandmarksDetail: View {
+    var landMark: LandmarkDetailDTO
+    
     var body: some View {
         VStack {
-            MapView()
+            MapView(settings: .init(latitude: 1, longiture: 1))
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CircleImageView()
+            CircleImageView(image: Image(""))
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
-                Text("Turtle Rock")
+                Text("title")
                     .font(.title)
                 
                 HStack {
@@ -45,6 +48,6 @@ struct LandmarksDetail: View {
 
 struct Detail_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarksDetail()
+        LandmarksDetail(landMark: LandmarkDetailDTO())
     }
 }

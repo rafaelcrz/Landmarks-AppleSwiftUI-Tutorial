@@ -23,8 +23,7 @@ struct Landmark: Hashable, Codable {
     }
     
     private var imageName: String
-    
-    var coordinates: Coordinates
+    private var coordinates: Coordinates
     struct Coordinates: Hashable, Codable {
         var latitude: Double
         var longitude: Double
