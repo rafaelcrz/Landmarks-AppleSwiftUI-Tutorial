@@ -97,6 +97,7 @@
 		923B997F26E50C9700935D2A /* LandmarksDetail */ = {
 			isa = PBXGroup;
 			children = (
+				9260E75126E415B700BB9456 /* LandmarkDetailDTO.swift */,
 				9260E74326E4059400BB9456 /* LandmarksDetail.swift */,
 			);
 			path = LandmarksDetail;
@@ -150,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				92AB34AB26DF7CD90063A972 /* Landmark.swift */,
-				9260E75126E415B700BB9456 /* LandmarkDetailDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
