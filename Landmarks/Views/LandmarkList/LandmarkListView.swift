@@ -14,9 +14,9 @@ struct LandmarkListView: View {
         NavigationView {
             List(viewModel.getLandmarkRowDTO()) { landmark in
                 NavigationLink(destination: LandmarksDetail(
-                    landMark: LandmarkDetailDTO()
+                    dto: landmark
                 )) {
-                    LandmarkRowView(image: landmark.image, title: landmark.title)
+                    LandmarkRowView(image: landmark.image, title: landmark.name)
                 }
             }
             .navigationTitle("Landmarks")

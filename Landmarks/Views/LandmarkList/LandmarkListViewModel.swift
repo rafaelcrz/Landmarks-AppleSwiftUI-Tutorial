@@ -6,22 +6,35 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol LandmarkListViewModelProtocol {
     var bundleHelper: BundleHelperProtocol { get }
-    func getLandmarkRowDTO() -> [LandMarkDTO]
+    func getLandmarkRowDTO() -> [LandmarkDetailDTO]
 }
 
 struct LandmarkListViewModel: LandmarkListViewModelProtocol {
     var bundleHelper: BundleHelperProtocol
     private let localFileName: String = "landmarkData"
     
-    func getLandmarkRowDTO() -> [LandMarkDTO] {
+    func getLandmarkRowDTO() -> [LandmarkDetailDTO] {
+        return loadLocalLandmarkList().map {
+            LandmarkDetailDTO(
+                id: $0.id,
+                latitude: $0.locationCoodinate.latitude,
+                longitude: $0.locationCoodinate.longitude,
+                image: $0.image,
+                name: $0.name,
+                park: $0.park,
+                state: $0.state,
+                description: $0.description
+            )
+        }
+    }
+    
+    private func loadLocalLandmarkList() -> [Landmark] {
         do {
-            let landMarks: [Landmark] = try bundleHelper.load(localFileName, withExtension: "json")
-            return landMarks.map {
-                LandMarkDTO(id: $0.id, image: $0.image, title: $0.name)
-            }
+            return try bundleHelper.load(localFileName, withExtension: "json")
         } catch {
             return []
         }

@@ -9,35 +9,35 @@ import SwiftUI
 import MapKit
 
 struct LandmarksDetail: View {
-    var landMark: LandmarkDetailDTO
+    var dto: LandmarkDetailDTO
     
     var body: some View {
         VStack {
-            MapView(settings: .init(latitude: 1, longiture: 1))
+            MapView(settings: .init(latitude: dto.latitude, longiture: dto.longitude))
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
-            CircleImageView(image: Image(""))
+            CircleImageView(image: dto.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
-                Text("title")
+                Text(dto.name)
                     .font(.title)
                 
                 HStack {
-                    Text("Joshua Tree National Park")
+                    Text(dto.park)
                     Spacer()
-                    Text("California")
+                    Text(dto.state)
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 
                 Divider()
                 
-                Text("About Turtle Rock")
+                Text(dto.name)
                     .font(.title2)
-                Text("Descriptive text goes here.")
+                Text(dto.description)
                 
             }.padding()
             
@@ -48,6 +48,15 @@ struct LandmarksDetail: View {
 
 struct Detail_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarksDetail(landMark: LandmarkDetailDTO())
+        LandmarksDetail(dto: LandmarkDetailDTO(
+            id: 1,
+            latitude: 2,
+            longitude: 2,
+            image: Image(""),
+            name: "name",
+            park: "park",
+            state: "state",
+            description: "description"
+        ))
     }
 }
