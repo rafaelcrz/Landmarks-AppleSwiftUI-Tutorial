@@ -34,11 +34,6 @@ struct LandmarkRowView: View {
 
 struct LandmarkRowView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            LandmarkRowView(image: Image("stmarylake"), title: "Stmarylake1")
-                .previewLayout(.fixed(width: 300, height: 70))
-        }
-        
         List {
             LandmarkRowView(image: Image("stmarylake"), title: "Stmarylake1")
         }
