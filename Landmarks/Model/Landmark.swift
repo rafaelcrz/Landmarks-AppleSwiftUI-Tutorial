@@ -21,6 +21,7 @@ struct Landmark: Hashable, Codable {
     var locationCoodinate: CLLocationCoordinate2D {
         .init(latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
+    var isFavorite: Bool
     
     private var imageName: String
     private var coordinates: Coordinates

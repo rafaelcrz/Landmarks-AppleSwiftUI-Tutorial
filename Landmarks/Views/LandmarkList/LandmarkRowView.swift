@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct FavoriteImage: View {
+    let favorite: Bool
+    
+    private var imageName: String {
+        favorite ? "star.fill": ""
+    }
+    
+    var body: some View {
+        Image(systemName: imageName)
+            .foregroundColor(.yellow)
+    }
+}
+
 struct LandMarkDTO: Identifiable {
     var id: Int
     let image: Image?
@@ -16,6 +29,7 @@ struct LandMarkDTO: Identifiable {
 struct LandmarkRowView: View {
     let image: Image?
     let title: String
+    let isFavorite: Bool
     
     var body: some View {
         HStack {
@@ -28,14 +42,18 @@ struct LandmarkRowView: View {
                 .font(.subheadline)
             
             Spacer()
+            
+            FavoriteImage(favorite: isFavorite)
         }
     }
+    
+    
 }
 
 struct LandmarkRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            LandmarkRowView(image: Image("stmarylake"), title: "Stmarylake1")
+            LandmarkRowView(image: Image("stmarylake"), title: "Stmarylake1", isFavorite: false)
         }.previewLayout(PreviewLayout.fixed(width: 400, height: 62))
     }
 }

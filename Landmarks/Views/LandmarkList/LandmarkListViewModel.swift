@@ -10,14 +10,14 @@ import SwiftUI
 
 protocol LandmarkListViewModelProtocol {
     var bundleHelper: BundleHelperProtocol { get }
-    func getLandmarkRowDTO() -> [LandmarkDetailDTO]
+    func getLandmarkRowDTO(onlyFavorite: Bool) -> [LandmarkDetailDTO]
 }
 
 struct LandmarkListViewModel: LandmarkListViewModelProtocol {
     var bundleHelper: BundleHelperProtocol
     private let localFileName: String = "landmarkData"
     
-    func getLandmarkRowDTO() -> [LandmarkDetailDTO] {
+    func getLandmarkRowDTO(onlyFavorite: Bool) -> [LandmarkDetailDTO] {
         return loadLocalLandmarkList().map {
             LandmarkDetailDTO(
                 id: $0.id,
@@ -27,9 +27,10 @@ struct LandmarkListViewModel: LandmarkListViewModelProtocol {
                 name: $0.name,
                 park: $0.park,
                 state: $0.state,
-                description: $0.description
+                description: $0.description,
+                isFavorite: $0.isFavorite
             )
-        }
+        }.filter { return !onlyFavorite || $0.isFavorite }
     }
     
     private func loadLocalLandmarkList() -> [Landmark] {

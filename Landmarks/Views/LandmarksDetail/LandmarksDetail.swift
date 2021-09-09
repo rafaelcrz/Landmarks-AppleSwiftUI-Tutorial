@@ -60,7 +60,8 @@ struct Detail_Previews: PreviewProvider {
             name: "name",
             park: "park",
             state: "state",
-            description: "description"
+            description: "description",
+            isFavorite: true
         ))
     }
 }

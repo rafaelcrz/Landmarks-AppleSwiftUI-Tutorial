@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct LandmarkListView: View {
+    @State private var showFavoriteOnly: Bool = false
+    
     let viewModel: LandmarkListViewModelProtocol
     
     var body: some View {
         NavigationView {
-            List(viewModel.getLandmarkRowDTO()) { landmark in
-                NavigationLink(destination: LandmarksDetail(
-                    dto: landmark
-                )) {
-                    LandmarkRowView(image: landmark.image, title: landmark.name)
+            List {
+                Toggle(isOn: $showFavoriteOnly, label: {
+                    Text("Favorites Only")
+                        .font(.subheadline)
+                })
+                
+                ForEach(viewModel.getLandmarkRowDTO(onlyFavorite: showFavoriteOnly)) { landmark in
+                    NavigationLink(destination: LandmarksDetail(
+                        dto: landmark
+                    )) {
+                        LandmarkRowView(image: landmark.image, title: landmark.name, isFavorite: landmark.isFavorite)
+                    }
                 }
-            }
-            .navigationTitle("Landmarks")
+            }.navigationTitle("Landmarks")
         }
     }
 }

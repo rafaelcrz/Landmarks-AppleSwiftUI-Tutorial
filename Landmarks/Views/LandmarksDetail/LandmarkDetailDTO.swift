@@ -16,4 +16,5 @@ struct LandmarkDetailDTO: Identifiable {
     var park: String
     var state: String
     var description: String
+    var isFavorite: Bool
 }
